@@ -1,0 +1,45 @@
+<%= form_with(model: event, local: true) do |form| %>
+
+  <% if event.errors.any? %>
+    <% event.errors.full_messages.each do |message| %>
+      <%= js add_gritter(message, title: "", sticky: false) %>
+    <% end %>
+  <% end %>
+
+  <div>
+    <div class="form-group">
+      Event title:
+      <div><%= form.text_field :title, id: :event_title, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      Please describe your event:
+      <div><%= form.text_area :body, id: :event_body, size: "25x3", class: "form-control" %></div>
+    </div>
+
+    <div class="form-group">
+      Where is your event taking place?
+      <div><%= form.text_area :location, id: :event_location, placeholder: "Full address, business name and zip, geographic point of interest, etc.", size: "25x3", class: "form-control"%></div>
+    </div>
+
+     <div class="form-group">
+      Date and time of the event:
+      <div><%= form.datetime_select :start, ampm: true, id: :event_date, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group">
+      How long will it be?
+      <div><%= form.select :end, ["1 hour", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours"], id: :event_date, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group">
+      Please upload an image for the event:
+      <div><%= form.file_field :main_image, id: :image %></div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Submit", class: "btn btn-primary btn-block event-button" %>
+    </div>
+  </div>
+<% end %>

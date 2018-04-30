@@ -1,0 +1,52 @@
+<div class="sub-nav">
+  <%= link_to "< BACK", events_path %>
+  <% if current_user %>
+    <% if current_user.events.include?(@event) || current_user.roles.include?(:admin) %>
+      <% unless @event.approved? %>
+        <%= link_to 'EDIT', edit_event_path(@event) %>
+        <%= link_to 'DELETE', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="card">
+  <div class="row no-gutters">
+
+    <div class="col-12 main-image-trim">
+      <%= image_tag @event.main_image, class: "event-image" %>
+    </div>
+
+  </div>
+
+  <div class="row no-gutters">
+    <div class="col-md-5">
+      <div class="event-map">
+        <img src="<%= "https://maps.googleapis.com/maps/api/staticmap?center=" + @event.location + "&zoom=14&scale=1&size=450x400&maptype=roadmap&format=png&visual_refresh=true&markers=size:large%7Ccolor:0xff0000%7Clabel:1%7C" + @event.location %>">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="row-element">
+        <div class="heading">
+          <h2><%= @event.title.titleize %></h2>
+        </div>
+        <hr>
+        <p>Event author: <%= @event.user.name %></p>
+        <p>On: <%= @event.start.strftime("%A, %B %d, %Y") %></p>
+        <p>At: <%= @event.start.strftime("%l:%M %p")%></p>
+        <p>Location: <%= @event.location %>
+        <p>Attending: <%= @event.rsvps.count %></p>
+        <br>
+ 
+        <h3>Description</h3>
+
+        <hr>
+        <div>
+          <p><%= @event.body %></p>
+        </div>
+        <!-- TODO: RSVP and Favorites -->
+      </div>
+    </div>
+  </div>
+</div>

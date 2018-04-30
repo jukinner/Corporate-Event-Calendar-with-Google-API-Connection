@@ -1,0 +1,59 @@
+<div class="card card-main">
+  <div class="row headings">
+    <div class="col-9">
+      <h1>ADMIN DASHBOARD</h1>
+      <p>Welcome <%= current_user.name %></p>
+      <p><%= link_to "Sign In with Google",  user_google_oauth2_omniauth_authorize_path %>  </p>
+    </div>
+    <div class="col-3 text-right">
+      <h3>Pending Events: <%= @pending_events.count %></h3>
+      <p>Approved Events: <%= @approved_events.count %></p>
+      <p>Rejected Events: <%= @rejected_events.count %></p>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="headings">  
+      <h3>PENDING EVENTS</h3>
+    </div>
+    <hr>
+    <% if @pending_events.empty? %>
+      <div class="indentions">
+        <p>You have no pending events <span style="font-size: 1.4em;"><i class="far fa-smile"></i></span></p>
+      </div>
+    <% else %>
+      <%= render partial: 'shared/cards', locals: {events: @pending_events, button_partial: 'shared/admin_buttons'} %>
+    <% end %>
+  </div>
+
+  <div>
+    <hr>
+    <div class="headings">  
+      <h3>APPROVED EVENTS</h3>
+    </div>
+    <hr>
+    <% if @approved_events.empty? %>
+      <div class="indentions">
+        <p>There are no approved events</p>
+      </div>
+    <% else %>
+      <%= render partial: 'shared/cards', locals: {events: @approved_events, button_partial: ''} %>
+    <% end %>
+  </div>
+
+  <div>
+    <hr>
+    <div class="headings">  
+      <h3>REJECTED EVENTS</h3>
+    </div>
+    <hr>
+    <% if @rejected_events.empty? %>
+      <div class="indentions">
+        <p>There are no rejected events</p>
+      </div>
+    <% else %>
+      <%= render partial: 'shared/cards', locals: {events: @rejected_events, button_partial: ''} %>
+    <% end %>
+  </div>
+</div>

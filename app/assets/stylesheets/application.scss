@@ -1,0 +1,366 @@
+@import 'bootstrap';
+@import 'gritter';
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  color: rgb(110, 110, 110);
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 20pt;
+}
+
+h2 {
+  font-size: 16pt;
+}
+
+h3 {
+  font-size: 14pt;
+}
+
+p {
+  font-size: 12pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  color: #3AE39F;
+  &:hover {
+    color: #3AE39F;
+    text-decoration: none;
+  }
+}
+
+.card {
+  border-radius: 7px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.headings {
+  padding: 20px;
+}
+
+.indentions {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.calendar {
+  padding: 10px;
+  width: 100%;
+  height: 600px;
+}
+
+//========== Navigation ===========
+
+.nav-masthead {
+   background-color: white;
+   padding-left: 20px;
+   height: 75px;
+   padding-bottom: 5px;
+   border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-masthead a{
+  padding-left: 20px;
+}
+
+.body {
+  min-height: 100%;
+  margin-top: 30px;
+}
+
+.devcamp-logo {
+  padding-top: 10px;
+  width: 122.75px;
+  height: 60px;
+}
+
+.nav-styling {
+  justify-content: center;
+  line-height: 30px;
+}
+
+.nav-links {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  padding: 25px 100px 25px 40px;
+}
+
+.nav-links a {
+  color: #b7b7b7;
+}
+
+.nav-links a:hover {
+  color: #3AE39F;
+  text-decoration: none;
+}
+
+.indiv-nav-links {
+  padding-left: 40px;
+}
+
+//========== Events ===========
+
+.card-heading {
+  color: rgb(110, 110, 110);
+  font-size: 18px;
+}
+
+.card-heading:hover {
+  text-decoration: none;
+  color: rgb(73, 73, 73);
+}
+
+.card hr {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.card-custom {
+  width: 530px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 10pt;
+
+  .col-3 {
+    padding-right: 0px;
+  }
+
+  .btn-success {
+    background-color: #3AE39F;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #00cb79;
+  }
+  
+  .btn-secondary {
+    background-color: #e0e0e0;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d3d3d3;
+  }
+  
+  .btn-danger {
+    background-color: rgb(112, 130, 125);
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: rgb(82, 94, 90);
+  }
+  
+  .btn-custom {
+    width: 35px;
+    height: 32px;
+    margin: 8px;
+    padding: 0px;
+    padding-top: 5px;
+  }
+}
+
+.thumb-image {
+  height: 110px;
+}
+
+.thumb-image-trim {
+  // border-style: solid;
+  // border-width: 1px;
+  // border-color: gray;
+  border-radius: 7px;
+  max-height: 110px;
+  max-width: 110px;
+  overflow: hidden;
+
+}
+
+.card-main {
+  padding: 15px;
+  background-color: rgb(252, 252, 252);
+}
+
+//========== Footer ===========
+
+.footer { 
+  fixed-height: 60px;
+  border-top: 1px solid #e0e0e0;
+  background-color: white;
+  margin-top: 120px;
+}
+
+.footer-left {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+  font-size: 18px;  
+}
+
+.footer-left-link a {
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-left-link a:link {
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-left-link a:visited {
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-left-link a:active {
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-left-link {
+  font-weight: bold;
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-left-link a:hover {
+  color: #3ae39f;
+  text-decoration: none;
+}
+
+.footer-button {
+  background-color: #3ae39f;
+  color: white;
+  height: 60px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer-button a {
+  color: white;
+}
+
+.footer-button a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-button a:hover{
+  color: white;
+}
+
+.footer-button a:visited {
+  color: white;
+}
+
+.footer-button a:active {
+  color: white;
+}
+
+//========== Devise ===========
+
+.devise-card {
+  padding: 40px;
+}
+
+html,body{
+  height: 100%;
+}
+
+#holder{
+  min-height: 100%;
+  position:relative;
+}
+
+footer{
+  height: 60px; 
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+// ============== Show Page ===============
+  
+.sub-nav a {
+  font-family: 'Montserrat';
+  font-size: 13px;
+  color: rgb(110, 110, 110);
+}
+
+.sub-nav a:hover {
+  text-decoration: none;
+  color: #00cb79;
+}
+
+.event-map {
+  height: 100%;
+}
+
+.event-image {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  width: 100%;
+}
+
+div.main-image-trim {
+  max-height: 600px;
+  overflow: hidden;
+}
+
+#map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-row {
+  height: 400px;
+}
+
+.row-element {
+  padding: 15px;
+}
+
+// ============== Edit & New Event Pages ===============
+
+.event-button {
+  background-color: #3ae39f;
+  color:  white;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 1.0em;
+}
+
+.event-button:hover {
+  background-color: #00b675;
+}
+
+.form-fields {
+  margin-bottom: 15px;
+}
+
+.form-text {
+  font-size: .80em
+}
